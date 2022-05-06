@@ -24,8 +24,8 @@ ___
 ___
 ## 3,
 まずBPのアラートを作成します。
-  
-  
+
+　  
 A, **Rule name**に `BP Alert`　を入力します。（任意変更可能）
 
 B, **Rule type**は `Grafana managed alert` を選択してください。
@@ -76,8 +76,7 @@ ___
 
 **Name**には適当な名前を入力してください。
 
-**Webhook URL**など、各アプリで要求されるデータの入手方法はマニュアルの**ブロック生成ステータス通知設定手順**の中にまとめられています。
-https://dev.xstakepool.com/block_notify#2-apurinolinediscordtelegramslackni
+**Webhook URL**など、各アプリで要求されるデータの入手方法はマニュアルの[**ブロック生成ステータス通知セットアップ**](https://docs.spojapanguild.net/setup/11-blocknotify-setup/#11-2)に纏められています。
 
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。
 

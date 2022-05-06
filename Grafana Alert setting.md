@@ -55,7 +55,7 @@ ___
 **New alert rule**を選択し、同じ要領でリレーのアラートを作成します。
 ![e](https://user-images.githubusercontent.com/69729884/167115017-3abc90d7-6113-4ff4-aa51-55beb7a3d944.png)
 
-A,**Rule name**に `Relay Alert`　を入力（任意変更可能）、
+A,**Rule name**に `Relay Alert`　を入力（任意変更可能）
 
 D,**Metrics browser**の欄に  
 ```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```  
@@ -76,7 +76,7 @@ ___
 
 **Name**には適当な名前を入力してください。
 
-Webhook URLなど、各アプリで要求されるデータの入手方法はマニュアルの**ブロック生成ステータス通知設定手順**の中にまとめられています。
+**Webhook URL**など、各アプリで要求されるデータの入手方法はマニュアルの**ブロック生成ステータス通知設定手順**の中にまとめられています。
 https://dev.xstakepool.com/block_notify#2-apurinolinediscordtelegramslackni
 
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。

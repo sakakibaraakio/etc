@@ -31,7 +31,7 @@ A, **Rule name**に `BP Alert`　を入力します。（任意変更可能）
 
 B, **Rule type**は `Grafana managed alert` を選択してください。
 
-C, **Folder**は、最初に作成したフォルダを選択してください。
+C, **Folder**は、[手順1](https://github.com/sakakibaraakio/etc/blob/main/Grafana%20Alert%20setting.md#1)で作成したフォルダを選択してください。
 
 D, **Metrics browser**の欄に  
 ```cardano_node_metrics_slotInEpoch_int{instance="<BPのIP>:12798", job="prometheus", type="cardano-node"}```  

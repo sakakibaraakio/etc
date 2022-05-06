@@ -10,11 +10,11 @@ Grafanaのバージョンは、左下の？マークにマウスカーソルを�
 ___
 1,左メニューの＋マークから**Folder**を選択し、**Folder name**　に適当な名前を入れ、**Create**を押します。 
 
-![a](https://user-images.githubusercontent.com/69729884/167106893-ec26c6de-2e02-4b53-b5d1-ef04fae0f52a.png)
+![b](https://user-images.githubusercontent.com/69729884/167106893-ec26c6de-2e02-4b53-b5d1-ef04fae0f52a.png)
 
 ___
 2,左メニューの鈴マークから**Alert rules**を選択し、 **New alert rule** を押します。
-!(https://user-images.githubusercontent.com/69729884/167109229-a2fb373d-58d9-4f57-af95-f35995f0acf8.png)
+![c](https://user-images.githubusercontent.com/69729884/167109229-a2fb373d-58d9-4f57-af95-f35995f0acf8.png)
 
 ___
 3,まずBPのアラートを作成します。
@@ -41,11 +41,11 @@ G,該当箇所を　`IS BELOW 0` に置き換えてください。
 H,**Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
 
 I,右上の**Save and exit**を選択してください。
-(https://user-images.githubusercontent.com/69729884/167117913-4fa5950b-3ccd-45d3-aa25-c1fe1102394d.png)
+![d](https://user-images.githubusercontent.com/69729884/167117913-4fa5950b-3ccd-45d3-aa25-c1fe1102394d.png)
 
 ___
 4,**New alert rule**を選択し、同じ要領でリレーのアラートを作成します。
-(https://user-images.githubusercontent.com/69729884/167115017-3abc90d7-6113-4ff4-aa51-55beb7a3d944.png)
+![e](https://user-images.githubusercontent.com/69729884/167115017-3abc90d7-6113-4ff4-aa51-55beb7a3d944.png)
 
 A,**Rule name**に `Relay Alert`　を入力（任意変更可能）、
 
@@ -57,7 +57,7 @@ D,**Metrics browser**の欄に
 
 ___
 5,**Contact points**を選択し**New contact point**を押します。
-(https://user-images.githubusercontent.com/69729884/167119874-fca808dd-62cc-4e39-88ef-93ad54e34860.png)
+![f](https://user-images.githubusercontent.com/69729884/167119874-fca808dd-62cc-4e39-88ef-93ad54e34860.png)
 
 ___
 6,アラートをどのアプリに飛ばすかを設定します。（Emailは特別な設定が必要なので非推奨とさせていただきます。）
@@ -70,15 +70,15 @@ https://dev.xstakepool.com/block_notify#2-apurinolinediscordtelegramslackni
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。
 
 入力後、**Save contact point**を選択します。 
-(https://user-images.githubusercontent.com/69729884/167120467-97996bc0-17bb-4ab6-a7c4-85ce7cdedf24.png)
+![g](https://user-images.githubusercontent.com/69729884/167120467-97996bc0-17bb-4ab6-a7c4-85ce7cdedf24.png)
 
 ___
 7,**Notification policies**に移動し、**New specific policy**を選択します。
-(https://user-images.githubusercontent.com/69729884/167121003-a5f91553-1316-4991-b220-4c777fabb6af.png)
+![h](https://user-images.githubusercontent.com/69729884/167121003-a5f91553-1316-4991-b220-4c777fabb6af.png)
 
 ___
 8,**Contact point**を先ほど作成したアラート設定に変更し、**Save policy**を選択します。
-(https://user-images.githubusercontent.com/69729884/167121198-e232a5a6-c23f-4bf2-aba6-0bb71ba94f68.png)
+![i](https://user-images.githubusercontent.com/69729884/167121198-e232a5a6-c23f-4bf2-aba6-0bb71ba94f68.png)
 
 ___
 9,設定完了です。ブロック生成予定の無いタイミングでノードを停止し、6分ほど待ってアラートがアプリに届くか確認してください。

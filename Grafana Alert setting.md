@@ -24,8 +24,8 @@ ___
 ___
 ## 3,
 まずBPのアラートを作成します。
-
-
+  
+  
 A,**Rule name**に `BP Alert`　を入力します。（任意変更可能）
 
 B,**Rule type**は `Grafana managed alert` を選択してください。
@@ -82,8 +82,7 @@ https://dev.xstakepool.com/block_notify#2-apurinolinediscordtelegramslackni
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。
 
 入力後、**Save contact point**を選択します。 
-![g](https://user-images.githubusercontent.com/69729884/167120467-97996bc0-17bb-4ab6-a7c4-85ce7cdedf24.png)
-
+![g](https://user-images.githubusercontent.com/69729884/167127345-fac37479-0f33-4134-a6d3-22d1395340a7.png)
 
 ___
 ## 7,

@@ -48,7 +48,7 @@ G, 該当箇所を　`IS BELOW 0` に置き換えてください。
 H, **Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
 
 I, 上記がすべて完了した後、右上の**Save and exit**を選択してください。
-![d](https://user-images.githubusercontent.com/69729884/167117913-4fa5950b-3ccd-45d3-aa25-c1fe1102394d.png)
+![d](https://user-images.githubusercontent.com/69729884/167136366-09cebb0f-5635-439e-b4fa-bcdd55f48eaf.png)
 
 
 ___
@@ -77,9 +77,9 @@ ___
 
 **Name**には適当な名前を入力してください。
 
-**Contact point type**にて、アラートを飛ばすアプリを選択します。
+**Contact point type**にて、アラートを通知するアプリを選択します。
 
-**Webhook URL**など、各アプリで要求されるデータの入手方法はマニュアルの[**ブロック生成ステータス通知セットアップ**](https://docs.spojapanguild.net/setup/11-blocknotify-setup/#11-2)に纏められています。
+**Webhook URL**などに入力する、通知先アプリのURLデータの入手方法は[**ブロック生成ステータス通知セットアップ**](https://docs.spojapanguild.net/setup/11-blocknotify-setup/#11-2)に纏められています。
 
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。
 

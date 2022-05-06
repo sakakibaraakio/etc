@@ -1,4 +1,10 @@
 # Grafana　アラート設定
+各ノードが停止した際に、  
+・LINE  
+・Discord  
+・Telegram  
+・Slack  
+のアプリにアラート通知が届くよう設定する手順になります。
 
 >以下の設定は、Grafana Ver.8以降に対応したものになります。  
 >Grafana Ver.7以前にアラート設定を作成されていた方は、一度既存のアラート設定を全て削除することで以下の設定が可能になります。
@@ -27,7 +33,7 @@ ___
 まずBPのアラートを作成します。
 
 　  
-A, **Rule name**に `BP Alert`　を入力します。（任意変更可能）
+A, **Rule name**に `BP Alert` を入力します。（任意変更可能）
 
 B, **Rule type**は `Grafana managed alert` を選択してください。
 
@@ -41,9 +47,9 @@ E, **Legend**の欄に
 ```{{alias}}```  
 を入力してください。
 
-F, **instant**を切り替えてオンにしてください。（ツマミが右）
+F, **instant**を切り替えてオンにしてください。
 
-G, 該当箇所を　`IS BELOW 0` に置き換えてください。
+G, 該当箇所を `IS BELOW 0` に置き換えてください。
 
 H, **Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
 
@@ -56,7 +62,7 @@ ___
 **New alert rule**を選択し、同じ要領でリレーのアラートを作成します。
 ![e](https://user-images.githubusercontent.com/69729884/167115017-3abc90d7-6113-4ff4-aa51-55beb7a3d944.png)
 
-A, **Rule name**に `Relay Alert`　を入力（任意変更可能）
+A, **Rule name**に `Relay Alert` を入力（任意変更可能）
 
 D, **Metrics browser**の欄に  
 ```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```  

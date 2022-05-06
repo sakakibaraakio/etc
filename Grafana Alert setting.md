@@ -12,7 +12,7 @@ ___
 ## 1,
 左メニューの＋マークから**Folder**を選択し、**Folder name**に適当な名前を入れ、**Create**を押します。 
 
-![b](https://user-images.githubusercontent.com/69729884/167106893-ec26c6de-2e02-4b53-b5d1-ef04fae0f52a.png)
+![b](https://user-images.githubusercontent.com/69729884/167131931-4c8df7e7-82c1-4cba-bb5c-d19bdb2239a0.png)
 
 
 ___

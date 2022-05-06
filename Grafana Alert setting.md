@@ -10,7 +10,8 @@
 
 ___
 ## 1,
-左メニューの＋マークから**Folder**を選択し、**Folder name**に適当な名前を入れ、**Create**を押します。 
+左メニューの＋マークから**Folder**を選択し、**Folder name**に適当な名前を入力します。（例,　`Cardano Alert`）  
+入力後、**Create**を押します。 
 
 ![b](https://user-images.githubusercontent.com/69729884/167131931-4c8df7e7-82c1-4cba-bb5c-d19bdb2239a0.png)
 
@@ -46,7 +47,7 @@ G, 該当箇所を　`IS BELOW 0` に置き換えてください。
 
 H, **Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
 
-I, 右上の**Save and exit**を選択してください。
+I, 上記がすべて完了した後、右上の**Save and exit**を選択してください。
 ![d](https://user-images.githubusercontent.com/69729884/167117913-4fa5950b-3ccd-45d3-aa25-c1fe1102394d.png)
 
 

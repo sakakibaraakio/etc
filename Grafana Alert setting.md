@@ -62,7 +62,7 @@ D, **Metrics browser**の欄に
 ```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```  
 ↑をそのまま入力してください。
 
-後はBPのアラート作成と同じ流れになります。
+その他はBPのアラート作成と同じ流れになります。
 
 
 ___

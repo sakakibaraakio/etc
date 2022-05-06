@@ -4,11 +4,13 @@
 Grafana Ver.7以前にアラート設定をされていた方は、一度既存のアラート設定をすべて削除することで以下の設定が可能になります。
 
 Grafanaのバージョンは、左下の？マークにマウスカーソルを乗せることで確認可能です。
-![スクリーンショット 2022-05-06 182918](https://user-images.githubusercontent.com/69729884/167106556-458304b3-15c8-434a-b5e4-ab97fec64c6c.png)
+
+![a](https://user-images.githubusercontent.com/69729884/167106556-458304b3-15c8-434a-b5e4-ab97fec64c6c.png)
 
 ___
 1,左メニューの＋マークから**Folder**を選択し、**Folder name**　に適当な名前を入れ、**Create**を押します。 
-![2022-02-14_094714](https://user-images.githubusercontent.com/69729884/167106893-ec26c6de-2e02-4b53-b5d1-ef04fae0f52a.png)
+
+![a](https://user-images.githubusercontent.com/69729884/167106893-ec26c6de-2e02-4b53-b5d1-ef04fae0f52a.png)
 
 ___
 2,左メニューの鈴マークから**Alert rules**を選択し、 **New alert rule** を押します。

@@ -77,6 +77,8 @@ ___
 
 **Name**には適当な名前を入力してください。
 
+**Contact point type**にて、アラートを飛ばすアプリを選択します。
+
 **Webhook URL**など、各アプリで要求されるデータの入手方法はマニュアルの[**ブロック生成ステータス通知セットアップ**](https://docs.spojapanguild.net/setup/11-blocknotify-setup/#11-2)に纏められています。
 
 アラート状態が回復したという通知がいらない方は**Notification setting**の**Disable resolved message**にチェックを入れてください。

@@ -26,27 +26,27 @@ ___
 まずBPのアラートを作成します。
   
   
-A,**Rule name**に `BP Alert`　を入力します。（任意変更可能）
+A, **Rule name**に `BP Alert`　を入力します。（任意変更可能）
 
-B,**Rule type**は `Grafana managed alert` を選択してください。
+B, **Rule type**は `Grafana managed alert` を選択してください。
 
-C,**Folder**は、最初に作成したフォルダを選択してください。
+C, **Folder**は、最初に作成したフォルダを選択してください。
 
-D,**Metrics browser**の欄に  
+D, **Metrics browser**の欄に  
 ```cardano_node_metrics_slotInEpoch_int{instance="<BPのIP>:12798", job="prometheus", type="cardano-node"}```  
 ↑を <BPのIP> 部分を置き換えてから入力してください。
 
-E,**Legend**の欄に  
+E, **Legend**の欄に  
 ```{{alias}}```  
 を入力してください。
 
-F,**instant**を切り替えてオンにしてください。（ツマミが右）
+F, **instant**を切り替えてオンにしてください。（ツマミが右）
 
-G,該当箇所を　`IS BELOW 0` に置き換えてください。
+G, 該当箇所を　`IS BELOW 0` に置き換えてください。
 
-H,**Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
+H, **Configure no data and error handling**を展開し、**Alert state if no data or all values are null**を`Alerting`に変更してください。
 
-I,右上の**Save and exit**を選択してください。
+I, 右上の**Save and exit**を選択してください。
 ![d](https://user-images.githubusercontent.com/69729884/167117913-4fa5950b-3ccd-45d3-aa25-c1fe1102394d.png)
 
 
@@ -55,9 +55,9 @@ ___
 **New alert rule**を選択し、同じ要領でリレーのアラートを作成します。
 ![e](https://user-images.githubusercontent.com/69729884/167115017-3abc90d7-6113-4ff4-aa51-55beb7a3d944.png)
 
-A,**Rule name**に `Relay Alert`　を入力（任意変更可能）
+A, **Rule name**に `Relay Alert`　を入力（任意変更可能）
 
-D,**Metrics browser**の欄に  
+D, **Metrics browser**の欄に  
 ```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```  
 ↑をそのまま入力してください。
 
@@ -98,4 +98,4 @@ ___
 
 ___
 ## 9,
-設定完了です。ブロック生成予定の無いタイミングでノードを停止し、6分ほど待ってアラートがアプリに届くか確認してください。
+設定完了です。ブロック生成予定の無いタイミングでノードを停止し、5分ほど待ってアラートがアプリに届くか確認してください。

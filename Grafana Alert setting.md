@@ -31,12 +31,12 @@ B,**Rule type**は `Grafana managed alert` を選択してください。
 
 C,**Folder**は、最初に作成したフォルダを選択してください。
 
-D,**Metrics browser**の欄に
-```cardano_node_metrics_slotInEpoch_int{instance="<BPのIP>:12798", job="prometheus", type="cardano-node"}```
+D,**Metrics browser**の欄に  
+```cardano_node_metrics_slotInEpoch_int{instance="<BPのIP>:12798", job="prometheus", type="cardano-node"}```  
 ↑を <BPのIP> 部分を置き換えてから入力してください。
 
-E,**Legend**の欄に
-```{{alias}}```
+E,**Legend**の欄に  
+```{{alias}}```  
 を入力してください。
 
 F,**instant**を切り替えてオンにしてください。（ツマミが右）
@@ -56,9 +56,9 @@ ___
 
 A,**Rule name**に `Relay Alert`　を入力（任意変更可能）、
 
-D,**Metrics browser**の欄に
-```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```
-をそのまま入力してください。
+D,**Metrics browser**の欄に  
+```cardano_node_metrics_slotInEpoch_int{instance="localhost:12798", job="prometheus", type="cardano-node"}```  
+↑をそのまま入力してください。
 
 後はBPのアラート作成と同じ流れになります。
 

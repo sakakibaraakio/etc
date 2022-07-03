@@ -1278,7 +1278,7 @@
             "uid": "n8qd9hn7z"
           },
           "exemplar": true,
-          "expr": "node_filesystem_avail_bytes / node_filesystem_size_bytes{mountpoint=\"/\"}",
+          "expr": "1 - node_filesystem_avail_bytes / node_filesystem_size_bytes{mountpoint=\"/\"}",
           "interval": "",
           "legendFormat": "{{alias}}",
           "refId": "A"
@@ -1530,6 +1530,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node",
   "uid": "K4z3N37w0rk",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }

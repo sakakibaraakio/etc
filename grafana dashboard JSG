@@ -1235,12 +1235,12 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "dark-red",
+                "color": "green",
                 "value": null
               },
               {
-                "color": "green",
-                "value": 0.1
+                "color": "dark-red",
+                "value": 0.9
               }
             ]
           },
@@ -1530,6 +1530,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node",
   "uid": "K4z3N37w0rk",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }

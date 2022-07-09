@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 30,
+  "id": 36,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -473,10 +473,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "avg without(cpu) (irate(node_cpu_seconds_total{job=\"prometheus\", mode=\"user\"}[1m]))",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -574,10 +574,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "rts_gc_current_bytes_used",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -799,10 +799,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -895,10 +895,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1118,10 +1118,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "cardano_node_metrics_density_real * 100",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1223,10 +1223,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "cardano_node_metrics_slotsMissedNum_int",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}}",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1397,10 +1397,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "irate(node_disk_read_bytes_total[1m])",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} read",
-          "range": false,
+          "range": true,
           "refId": "A"
         },
         {
@@ -1411,10 +1411,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "irate(node_disk_written_bytes_total[1m])",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} write",
-          "range": false,
+          "range": true,
           "refId": "B"
         }
       ],
@@ -1514,10 +1514,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "irate(node_network_receive_bytes_total[1m])*8",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} receive",
-          "range": false,
+          "range": true,
           "refId": "A"
         },
         {
@@ -1528,10 +1528,10 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "irate(node_network_transmit_bytes_total[1m])*8",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} transmit",
-          "range": false,
+          "range": true,
           "refId": "B"
         }
       ],

@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 28,
+  "id": 30,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -84,10 +84,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_Forge_forged_int",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -160,10 +163,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "(cardano_node_metrics_remainingKESPeriods_int * 1.5)",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -337,10 +343,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_slotNum_int{instance=\"localhost:12798\"} / 129600",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -396,10 +405,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_epoch_int{instance=\"localhost:12798\"}",
-          "instant": false,
+          "instant": true,
           "interval": "",
           "legendFormat": "",
+          "range": false,
           "refId": "B"
         }
       ],
@@ -458,9 +470,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "avg without(cpu) (irate(node_cpu_seconds_total{job=\"prometheus\", mode=\"user\"}[1m]))",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -555,10 +571,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "rts_gc_current_bytes_used",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -643,10 +662,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "rts_gc_wall_ms / 1000",
-          "instant": false,
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -702,9 +724,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_slotInEpoch_int",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -770,10 +796,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -863,10 +892,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -952,11 +984,14 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_connectedPeers_int",
           "format": "time_series",
-          "instant": false,
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1012,9 +1047,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_blockNum_int",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1076,10 +1115,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_density_real * 100",
-          "instant": false,
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1178,10 +1220,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "cardano_node_metrics_slotsMissedNum_int",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1277,10 +1322,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
-          "exemplar": true,
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "1 - node_filesystem_avail_bytes / node_filesystem_size_bytes{mountpoint=\"/\"}",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}}",
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1346,9 +1394,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "irate(node_disk_read_bytes_total[1m])",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} read",
+          "range": false,
           "refId": "A"
         },
         {
@@ -1356,9 +1408,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "irate(node_disk_written_bytes_total[1m])",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} write",
+          "range": false,
           "refId": "B"
         }
       ],
@@ -1441,6 +1497,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:712",
           "alias": "/.*transmit$/",
           "transform": "negative-Y"
         }
@@ -1454,9 +1511,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "irate(node_network_receive_bytes_total[1m])*8",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} receive",
+          "range": false,
           "refId": "A"
         },
         {
@@ -1464,9 +1525,13 @@
             "type": "prometheus",
             "uid": "n8qd9hn7z"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "irate(node_network_transmit_bytes_total[1m])*8",
+          "instant": true,
           "interval": "",
           "legendFormat": "{{alias}} {{device}} transmit",
+          "range": false,
           "refId": "B"
         }
       ],
@@ -1530,6 +1595,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node",
   "uid": "K4z3N37w0rk",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }

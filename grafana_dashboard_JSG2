@@ -1609,7 +1609,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "30s",
   "schemaVersion": 36,
   "style": "dark",
   "tags": [],
@@ -1637,6 +1637,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node",
   "uid": "K4z3N37w0rk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

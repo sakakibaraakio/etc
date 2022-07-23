@@ -34,8 +34,8 @@ nano catalystpayment.addr
 ```
 
 ___
-## 3、jormungandrを導入します。
-
+## 3、jormungandrとVoter-toolを導入します。
+jormungandrの導入
 ```
 wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name)/jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
@@ -45,7 +45,13 @@ wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s 
 tar -xf jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
 ```
-
+Voter-toolの導入
+```
+wget https://hydra.iohk.io/build/9209906/download/1/voter-registration.tar.gz
+```
+```
+tar -xf voter-registration.tar.gz
+```
 ___
 ## 4、登録メタデータを生成します。
 エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。

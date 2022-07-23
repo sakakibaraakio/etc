@@ -21,7 +21,7 @@ cardano-cli address key-gen \
 ```
 
 ___
-## 2、手数料支払い用アドレスに、ADAを送金します。
+## 2、手数料支払い用アドレスに、1.5ADAを送金します。
 支払先アドレス表示コマンド
 ```
 cardano-cli address build \

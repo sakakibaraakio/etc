@@ -29,10 +29,17 @@ cardano-cli address build \
     --out-file catalystpayment.addr \
     --mainnet
 
-nano catalystpayment.addr
+echo "$(cat catalystpayment.addr)"
 
 ```
 
+残高確認コマンド
+```
+cardano-cli query utxo \
+    --address $(cat catalystpayment.addr) \
+    --mainnet
+
+```
 ___
 ## 3、jormungandrとVoter-toolを導入します。
 jormungandrの導入

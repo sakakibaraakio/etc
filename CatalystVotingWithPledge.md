@@ -4,7 +4,7 @@ https://github.com/gitmachtl/scripts/blob/master/SPO_Pledge_Catalyst_Registratio
 
 
 >以下の手順では、作業中stake.skeyをサーバー上へ移動する必要が出てきます。
->リスクを承知の上で自己責任で行ってください。
+>リスクを承知の上で自己責任で行うようお願いします。
 >paymentキーは使用しないので、payment.addr内の誓約金は危険にさらされません。
 
 以下の作業はBPにて行います。

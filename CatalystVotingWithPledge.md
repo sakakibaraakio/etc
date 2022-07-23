@@ -201,12 +201,13 @@ tar -xf catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/
 
 QRコードを作成します。
 ```
-./catalyst-toolbox qr-code --pin <4桁コード> --input catalyst-vote.skey --output catalyst-qrcode.png img
+./catalyst-toolbox qr-code encode --pin <4桁コード> --input catalyst-vote.skey --output catalyst-qrcode.png img
 
 ```
 > <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
 
 
-表示されたqrコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
+$HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作成されるので、DLします。
+DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
 
 

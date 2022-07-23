@@ -61,6 +61,7 @@ tar -xf voter-registration.tar.gz
 ```
 ./jcli key generate --type ed25519extended > catalyst-vote.skey
 ./jcli key to-public < catalyst-vote.skey > catalyst-vote.pkey
+
 ```
 ___
 ## 4、登録メタデータを生成します。

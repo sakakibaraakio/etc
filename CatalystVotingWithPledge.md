@@ -49,9 +49,7 @@ ___
 ___
 ## 5、登録メタデータを生成します。
 ```
-cd $HOME/CatalystVoting
 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
-
 
 voter-registration \
     --rewards-address $(cat $NODE_HOME/stake.addr) \
@@ -62,13 +60,21 @@ voter-registration \
 
 ```
 
+コマンド入力後、stake.skeyを削除します。
+```
+rm $HOME/CatalystVoting/stake.skey
+```
 ___
 ## 6、トランザクションを作成、送信します。
+
+最新スロット番号を取得します。
 ```
 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
 echo Current Slot: $currentSlot
 
 ```
+
+catalystpayment.addrの残高を算出します。
 ```
 cardano-cli query utxo \
     --address $(cat $HOME/CatalystVoting/catalystpayment.addr) \
@@ -79,6 +85,8 @@ tail -n +3 fullUtxo.out | sort -k3 -nr | sed -e '/lovelace + [0-9]/d' > balance.
 cat balance.out
 
 ```
+
+UTXOを算出します
 ```
 tx_in=""
 total_balance=0
@@ -96,5 +104,88 @@ echo Total ADA balance: ${total_balance}
 echo Number of UTXOs: ${txcnt}
 
 ```
+
+build-raw transactionコマンドを実行します。
+```
+cardano-cli transaction build-raw \
+    ${tx_in} \
+    --tx-out $(cat catalystpayment.addr)+${total_balance} \
+    --invalid-hereafter $(( ${currentSlot} + 10000)) \
+    --fee 0 \
+    --metadata-json-file voting-registration-metadata.json \
+    --out-file tx.tmp
+
+```
+
+最低手数料を出力します。
+```
+fee=$(cardano-cli transaction calculate-min-fee \
+    --tx-body-file tx.tmp \
+    --tx-in-count ${txcnt} \
+    --tx-out-count 2 \
+    --mainnet \
+    --witness-count 1 \
+    --byron-witness-count 0 \
+    --protocol-params-file $NODE_HOME/params.json | awk '{ print $1 }')
+echo fee: $fee
+
+```
+
+変更出力を計算します。
+```
+txOut=$((${total_balance}-${fee}-${amountToSend}))
+echo Change Output: ${txOut}
+
+```
+
+トランザクションファイルを構築します。
+```
+cardano-cli transaction build-raw \
+    ${tx_in} \
+    --tx-out $(cat payment.addr)+${txOut} \
+    --invalid-hereafter $(( ${currentSlot} + 10000)) \
+    --fee ${fee} \
+    --metadata-json-file voting-registration-metadata.json \
+    --out-file catalysttx.raw
+
+```
+
+トランザクションに署名します。
+```
+cardano-cli transaction sign \
+    --tx-body-file catalysttx.raw \
+    --signing-key-file catalystpayment.skey \
+    --mainnet \
+    --out-file catalysttx.signed
+
+```
+
+トランザクションを送信します。
+```
+cardano-cli transaction submit \
+    --tx-file tx.signed \
+    --mainnet
+
+```
+___
+## 7、投票登録に使用するQRコードを作成します。
+
+catalyst-toolboxを導入します。
+```
+cd $HOME/CatalystVoting
+wget https://github.com/input-output-hk/catalyst-toolbox/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name)/catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu.tar.gz
+tar -xf catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu.tar.gz
+cp $(find . -name catalyst-toolbox -executable -type f) ~/cardano/.
+
+```
+
+QRコードを作成します。
+```
+./catalyst-toolbox qr-code --pin <4桁コード> --input catalyst-vote.skey --output catalyst-qrcode.png img
+
+```
+> <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
+
+表示されたqrコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
 
 

@@ -154,8 +154,8 @@ echo fee: $fee
 
 変更出力を計算します。
 ```
-txOut=$((${total_balance}-${fee}-${amountToSend}))
-echo Change Output: ${txOut}
+txOut=$((${total_balance}-${fee}))
+echo txOut: ${txOut}
 
 ```
 

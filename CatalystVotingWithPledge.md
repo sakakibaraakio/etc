@@ -21,7 +21,7 @@ cardano-cli address key-gen \
 ```
 
 ___
-## 2、手数料支払い用アドレスに、2ADAを送金します。
+## 2、手数料支払い用アドレスに、ADAを送金します。
 支払先アドレス表示コマンド
 ```
 cardano-cli address build \
@@ -212,4 +212,9 @@ $HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作�
 ___ 
 DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行えば完了です。
 
+<details>
+<summary>catalystpayment.addrからの送金</summary>
 
+カルダノは最も分散化されたネットワークでセキュリティ向上を目指しており、世界中に分散されたノードネットワークの形成が、カルダノにとって最も重要になります。このことから「おすすめのサーバー(VPS)業者」の情報共有は行っておりませんので、各自で選定をお願いいたします。AWS EC2及びlightsailは想定していません。
+
+</details>

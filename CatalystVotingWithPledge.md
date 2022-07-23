@@ -215,6 +215,128 @@ DLしたQRコードと設定した4桁pinコードを使用して、スマホア
 <details>
 <summary>catalystpayment.addrからの送金</summary>
 
-作成中
+最新スロット番号を取得します。
+```
+cd $HOME/CatalystVoting
+currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
+echo Current Slot: $currentSlot
 
+```
+送信先アドレスを設定します。
+```
+destinationAddress=<送金先アドレス>
+echo destinationAddress: $destinationAddress
+
+```
+> <送金先アドレス> の箇所を置き換えて入力してください。
+
+catalystpayment.addrの残高を算出します。
+```
+cardano-cli query utxo \
+    --address $(cat $HOME/CatalystVoting/catalystpayment.addr) \
+    --mainnet > fullUtxo.out
+
+tail -n +3 fullUtxo.out | sort -k3 -nr | sed -e '/lovelace + [0-9]/d' > balance.out
+
+cat balance.out
+
+```
+
+UTXOを算出します
+```
+tx_in=""
+total_balance=0
+while read -r utxo; do
+    in_addr=$(awk '{ print $1 }' <<< "${utxo}")
+    idx=$(awk '{ print $2 }' <<< "${utxo}")
+    utxo_balance=$(awk '{ print $3 }' <<< "${utxo}")
+    total_balance=$((${total_balance}+${utxo_balance}))
+    echo TxHash: ${in_addr}#${idx}
+    echo ADA: ${utxo_balance}
+    tx_in="${tx_in} --tx-in ${in_addr}#${idx}"
+done < balance.out
+txcnt=$(cat balance.out | wc -l)
+echo Total ADA balance: ${total_balance}
+echo Number of UTXOs: ${txcnt}
+
+```
+
+build-raw transactionコマンドを実行します。
+```
+cardano-cli transaction build-raw \
+    ${tx_in} \
+    --tx-out $(cat catalystpayment.addr)+0 \
+    --tx-out ${destinationAddress}+0 \
+    --invalid-hereafter $(( ${currentSlot} + 10000)) \
+    --fee 0 \
+    --out-file tx.tmp
+
+```
+
+最低手数料を出力します。
+```
+fee=$(cardano-cli transaction calculate-min-fee \
+    --tx-body-file tx.tmp \
+    --tx-in-count ${txcnt} \
+    --tx-out-count 2 \
+    --mainnet \
+    --witness-count 1 \
+    --byron-witness-count 0 \
+    --protocol-params-file params.json | awk '{ print $1 }')
+echo fee: $fee
+
+```
+
+送金ADAを設定します。
+```
+amountToSend=`expr $total_balance - $fee`
+echo amountToSend: $amountToSend
+
+```
+
+計算結果を出力します。
+```
+txOut=$((${total_balance}-${fee}-${amountToSend}))
+echo Change Output: ${txOut}
+
+```
+
+トランザクションファイルを構築します。
+```
+cardano-cli transaction build-raw \
+    ${tx_in} \
+    --tx-out $(cat catalystpayment.addr)+${txOut} \
+    --tx-out ${destinationAddress}+${amountToSend} \
+    --invalid-hereafter $(( ${currentSlot} + 10000)) \
+    --fee ${fee} \
+    --out-file tx.raw
+
+```
+
+トランザクションに署名します。
+```
+cardano-cli transaction sign \
+    --tx-body-file tx.raw \
+    --signing-key-file catalystpayment.skey \
+    --mainnet \
+    --out-file tx.signed
+
+```
+
+トランザクションを送信します。
+```
+cardano-cli transaction submit \
+    --tx-file tx.signed \
+    --mainnet
+
+```
+
+
+残高が0になっているか確認します。
+```
+cardano-cli query utxo \
+    --address ${destinationAddress} \
+    --mainnet \
+
+```
 </details>

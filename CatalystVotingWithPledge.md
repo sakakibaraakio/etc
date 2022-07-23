@@ -13,6 +13,7 @@ cd $HOME/CatalystVoting
 cardano-cli address key-gen \
     --verification-key-file catalystpayment.vkey \
     --signing-key-file catalystpayment.skey
+
 ```
 
 ___
@@ -25,4 +26,5 @@ cardano-cli address build \
     --mainnet
 
 cat catalystpayment.addr
+
 ```

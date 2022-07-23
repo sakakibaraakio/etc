@@ -282,7 +282,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
     --mainnet \
     --witness-count 1 \
     --byron-witness-count 0 \
-    --protocol-params-file params.json | awk '{ print $1 }')
+    --protocol-params-file $NODE_HOME/params.json | awk '{ print $1 }')
 echo fee: $fee
 
 ```

@@ -25,6 +25,6 @@ cardano-cli address build \
     --out-file catalystpayment.addr \
     --mainnet
 
-cat catalystpayment.addr
+nano catalystpayment.addr
 
 ```

@@ -56,6 +56,12 @@ wget https://hydra.iohk.io/build/9209906/download/1/voter-registration.tar.gz
 tar -xf voter-registration.tar.gz
 
 ```
+
+キーファイルを作成します。
+```
+./jcli key generate --type ed25519extended > catalyst-vote.skey
+./jcli key to-public < catalyst-vote.skey > catalyst-vote.pkey
+```
 ___
 ## 4、登録メタデータを生成します。
 エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。

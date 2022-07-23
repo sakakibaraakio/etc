@@ -208,7 +208,8 @@ QRコードを作成します。
 
  
 
-$HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作成されるので、DLします。 
-DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
+$HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作成されるので、DLします。
+___ 
+DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行えば完了です。
 
 

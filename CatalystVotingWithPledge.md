@@ -9,7 +9,7 @@ ___
 
 ```
 mkdir $HOME/CatalystVoting
-cd $HOME/catalystVoting
+cd $HOME/CatalystVoting
 cardano-cli address key-gen \
     --verification-key-file catalystpayment.vkey
     --signing-key-file catalystpayment.skey

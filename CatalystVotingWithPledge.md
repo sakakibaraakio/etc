@@ -58,7 +58,7 @@ tar -xf voter-registration.tar.gz
 ```
 ___
 ## 4、登録メタデータを生成します。
-エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。
+>エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。
 
 登録メタデータを生成します。
 ```

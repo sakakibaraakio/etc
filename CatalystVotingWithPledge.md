@@ -1,4 +1,7 @@
 # プール誓約金(payment.addr)を使用したCatalyst登録方法
+参考先：
+https://github.com/gitmachtl/scripts/blob/master/SPO_Pledge_Catalyst_Registration.md
+
 
 >以下の手順では、作業中stake.skeyをサーバー上へ移動する必要が出てきます。
 >リスクを承知の上で自己責任で行ってください。
@@ -42,12 +45,12 @@ wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s 
 tar -xf jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
 ```
-___
-
-## 4、エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。
 
 ___
-## 5、登録メタデータを生成します。
+## 4、登録メタデータを生成します。
+エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。
+
+登録メタデータを生成します。
 ```
 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
 
@@ -60,12 +63,12 @@ voter-registration \
 
 ```
 
-コマンド入力後、stake.skeyを削除します。
+メタデータ生成後、stake.skeyを削除します。
 ```
 rm $HOME/CatalystVoting/stake.skey
 ```
 ___
-## 6、トランザクションを作成、送信します。
+## 5、トランザクションを作成、送信します。
 
 最新スロット番号を取得します。
 ```
@@ -168,7 +171,7 @@ cardano-cli transaction submit \
 
 ```
 ___
-## 7、投票登録に使用するQRコードを作成します。
+## 6、投票登録に使用するQRコードを作成します。
 
 catalyst-toolboxを導入します。
 ```

@@ -7,7 +7,8 @@
 ___
 ## 1、手数料支払い用のアドレスを生成します。
 
-```mkdir $HOME/CatalystVoting
+```
+mkdir $HOME/CatalystVoting
 cd $HOME/catalystVoting
 cardano-cli address key-gen \
     --verification-key-file catalystpayment.vkey
@@ -17,7 +18,8 @@ cardano-cli address key-gen \
 ___
 ## 2、手数料支払い用アドレスに、2ADAを送金します。
 支払先アドレス表示コマンド
-```cardano-cli address build \
+```
+cardano-cli address build \
     --payment-verification-key-file catalystpayment.vkey \
     --out-file catalystpayment.addr \
     --mainnet

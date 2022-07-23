@@ -54,6 +54,7 @@ Voter-toolの導入
 wget https://hydra.iohk.io/build/9209906/download/1/voter-registration.tar.gz
 
 tar -xf voter-registration.tar.gz
+
 ```
 ___
 ## 4、登録メタデータを生成します。

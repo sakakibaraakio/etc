@@ -142,21 +142,21 @@ echo Change Output: ${txOut}
 ```
 cardano-cli transaction build-raw \
     ${tx_in} \
-    --tx-out $(cat payment.addr)+${txOut} \
+    --tx-out $(cat catalystpayment.addr)+${txOut} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee ${fee} \
     --metadata-json-file voting-registration-metadata.json \
-    --out-file catalysttx.raw
+    --out-file tx.raw
 
 ```
 
 トランザクションに署名します。
 ```
 cardano-cli transaction sign \
-    --tx-body-file catalysttx.raw \
+    --tx-body-file tx.raw \
     --signing-key-file catalystpayment.skey \
     --mainnet \
-    --out-file catalysttx.signed
+    --out-file tx.signed
 
 ```
 
@@ -186,6 +186,6 @@ QRコードを作成します。
 ```
 > <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
 
-表示されたqrコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
+表示されたqrコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行います。
 
 

@@ -84,8 +84,8 @@ cd $NODE_HOME
 
 ```
 > <スロット番号> の箇所を、先ほどメモした数字に置き換えてから入力してください。  
-  
-  
+　
+　  
 エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
 >エアギャップの
 >・catalyst-vote.pkey

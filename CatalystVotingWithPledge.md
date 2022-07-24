@@ -63,7 +63,7 @@ ___
 BPの$HOME/CatalystVotingにある、  
 ・catalyst-vote.pkey  
 ・voter-registration  
-を、エアギャップマシンの$NODE_HOMEにコピーします。
+の2つを、エアギャップマシンの$NODE_HOMEにコピーします。
 
 BPにて最新スロットを取得し、戻りの数字をメモします。
 ```

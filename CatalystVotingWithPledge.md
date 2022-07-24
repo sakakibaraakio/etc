@@ -67,9 +67,9 @@ BP
 ```
 ___
 ## 4、登録メタデータを生成します。
-BPの$HOME/CatalystVotingにある、
-・catalyst-vote.pkey
-・voter-registration
+BPの$HOME/CatalystVotingにある、　　
+・catalyst-vote.pkey　　
+・voter-registration　　
 を、エアギャップマシンの$NODE_HOMEにコピーします。
 
 BPにて最新スロットを取得し、戻りをメモします。  

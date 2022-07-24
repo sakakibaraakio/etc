@@ -84,13 +84,14 @@ cd $NODE_HOME
 
 ```
 > <スロット番号> の箇所を、先ほどメモした数字に置き換えてから入力してください。  
-　
+
 　  
 エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
 
->エアギャップの　　
->・catalyst-vote.pkey　　
->・voter-registration　　
+>作業後、エアギャップの  
+>・catalyst-vote.pkey  
+>・voter-registration  
+>・voting-registration-metadata.json  
 >は削除してもらっても大丈夫です。
 ___
 ## 5、トランザクションを作成、送信します。
@@ -178,7 +179,7 @@ cardano-cli transaction build-raw \
 
 ```
 
-トランザクションに署名します。
+トランザクションに署名します。（BPにて行います。）
 ```
 cardano-cli transaction sign \
     --tx-body-file tx.raw \

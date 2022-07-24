@@ -7,10 +7,11 @@ https://github.com/gitmachtl/scripts/blob/master/SPO_Pledge_Catalyst_Registratio
 >リスクを承知の上で自己責任で行うようお願いします。
 >paymentキーは使用しないので、payment.addr内の誓約金は危険にさらされません。
 
-以下の作業はBPにて行います。
+以下の作業はBPとエアギャップにて行います。
 ___
 ## 1、手数料支払い用のアドレスを生成します。
 
+BP
 ```
 mkdir $HOME/CatalystVoting
 cd $HOME/CatalystVoting
@@ -23,6 +24,7 @@ cardano-cli address key-gen \
 ___
 ## 2、手数料支払い用アドレスに、1.5ADAを送金します。
 支払先アドレス表示コマンド
+BP
 ```
 cardano-cli address build \
     --payment-verification-key-file catalystpayment.vkey \
@@ -34,6 +36,7 @@ echo "$(cat catalystpayment.addr)"
 ```
 
 残高確認コマンド
+BP
 ```
 cardano-cli query utxo \
     --address $(cat catalystpayment.addr) \
@@ -43,6 +46,7 @@ cardano-cli query utxo \
 ___
 ## 3、jormungandrとVoter-toolを導入します。
 jormungandrの導入
+BP
 ```
 wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name)/jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
@@ -50,6 +54,7 @@ tar -xf jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormu
 
 ```
 Voter-toolの導入
+BP
 ```
 wget https://hydra.iohk.io/build/9209906/download/1/voter-registration.tar.gz
 
@@ -58,6 +63,7 @@ tar -xf voter-registration.tar.gz
 ```
 
 キーファイルを作成します。
+BP
 ```
 ./jcli key generate --type ed25519extended > catalyst-vote.skey
 ./jcli key to-public < catalyst-vote.skey > catalyst-vote.pkey
@@ -65,30 +71,43 @@ tar -xf voter-registration.tar.gz
 ```
 ___
 ## 4、登録メタデータを生成します。
-エアギャップマシンの$NODE_HOME/stake.skeyを、BPの$HOME/CatalystVotingにコピーします。
+BPの$HOME/CatalystVotingにある、
+・catalyst-vote.pkey
+・voter-registration
+を、エアギャップマシンの$NODE_HOMEにコピーします。
 
-
-登録メタデータを生成します。
+BPにて最新スロットを取得し、戻りをメモします。
+BP
 ```
 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
+echo Current Slot: $currentSlot
 
-voter-registration \
+```
+
+エアギャップにて登録メタデータを生成します。
+エアギャップ
+```
+cd $NODE_HOME
+./voter-registration \
     --rewards-address $(cat $NODE_HOME/stake.addr) \
     --vote-public-key-file catalyst-vote.pkey \
     --stake-signing-key-file stake.skey \
-    --slot-no $currentSlot \
+    --slot-no <スロット番号> \
     --json > voting-registration-metadata.json
 
 ```
+> <スロット番号> の箇所を、先ほどメモした数字に置き換えてから入力してください。
 
-メタデータ生成後、stake.skeyを削除します。
-```
-rm $HOME/CatalystVoting/stake.skey
-```
+エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
+>エアギャップの
+>・catalyst-vote.pkey
+>・voter-registration
+>は削除してもらっても大丈夫です。
 ___
 ## 5、トランザクションを作成、送信します。
 
 最新スロット番号を取得します。
+BP
 ```
 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
 echo Current Slot: $currentSlot
@@ -96,6 +115,7 @@ echo Current Slot: $currentSlot
 ```
 
 catalystpayment.addrの残高を算出します。
+BP
 ```
 cardano-cli query utxo \
     --address $(cat $HOME/CatalystVoting/catalystpayment.addr) \
@@ -108,6 +128,7 @@ cat balance.out
 ```
 
 UTXOを算出します
+BP
 ```
 tx_in=""
 total_balance=0
@@ -127,6 +148,7 @@ echo Number of UTXOs: ${txcnt}
 ```
 
 build-raw transactionコマンドを実行します。
+BP
 ```
 cardano-cli transaction build-raw \
     ${tx_in} \
@@ -139,6 +161,7 @@ cardano-cli transaction build-raw \
 ```
 
 最低手数料を出力します。
+BP
 ```
 fee=$(cardano-cli transaction calculate-min-fee \
     --tx-body-file tx.tmp \
@@ -153,6 +176,7 @@ echo fee: $fee
 ```
 
 変更出力を計算します。
+BP
 ```
 txOut=$((${total_balance}-${fee}))
 echo txOut: ${txOut}
@@ -160,6 +184,7 @@ echo txOut: ${txOut}
 ```
 
 トランザクションファイルを構築します。
+BP
 ```
 cardano-cli transaction build-raw \
     ${tx_in} \
@@ -172,6 +197,7 @@ cardano-cli transaction build-raw \
 ```
 
 トランザクションに署名します。
+BP
 ```
 cardano-cli transaction sign \
     --tx-body-file tx.raw \
@@ -182,6 +208,7 @@ cardano-cli transaction sign \
 ```
 
 トランザクションを送信します。
+BP
 ```
 cardano-cli transaction submit \
     --tx-file tx.signed \
@@ -192,6 +219,7 @@ ___
 ## 6、投票登録に使用するQRコードを作成します。
 
 catalyst-toolboxを導入します。
+BP
 ```
 cd $HOME/CatalystVoting
 wget https://github.com/input-output-hk/catalyst-toolbox/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name)/catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu.tar.gz
@@ -200,6 +228,7 @@ tar -xf catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/
 ```
 
 QRコードを作成します。
+BP
 ```
 ./catalyst-toolbox qr-code encode --pin <4桁コード> --input catalyst-vote.skey --output catalyst-qrcode.png img
 

@@ -87,9 +87,10 @@ cd $NODE_HOME
 　
 　  
 エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
->エアギャップの
->・catalyst-vote.pkey
->・voter-registration
+
+>エアギャップの　　
+>・catalyst-vote.pkey　　
+>・voter-registration　　
 >は削除してもらっても大丈夫です。
 ___
 ## 5、トランザクションを作成、送信します。

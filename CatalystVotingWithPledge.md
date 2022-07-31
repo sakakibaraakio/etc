@@ -88,11 +88,6 @@ cd $NODE_HOME
 　  
 エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
 
->作業後、エアギャップの  
->・catalyst-vote.pkey  
->・voter-registration  
->・voting-registration-metadata.json  
->は削除してもらっても大丈夫です。
 ___
 ## 5、トランザクションを作成、送信します。
 
@@ -220,4 +215,8 @@ $HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作�
 ___ 
 DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行えば完了です。
 
-
+>作業後、エアギャップの  
+>・catalyst-vote.pkey  
+>・voter-registration  
+>・voting-registration-metadata.json  
+>は削除してもらっても大丈夫です。

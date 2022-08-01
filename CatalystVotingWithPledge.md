@@ -21,6 +21,7 @@ ___
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 cardano-cli address build \
     --payment-verification-key-file catalystpayment.vkey \
     --out-file catalystpayment.addr \
@@ -34,6 +35,7 @@ echo "$(cat catalystpayment.addr)"
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 cardano-cli query utxo \
     --address $(cat catalystpayment.addr) \
     --mainnet
@@ -45,6 +47,7 @@ jormungandrを導入します。
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name)/jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
 tar -xf jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
@@ -54,6 +57,7 @@ Voter-toolを導入します。
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 wget https://hydra.iohk.io/build/9209906/download/1/voter-registration.tar.gz
 
 tar -xf voter-registration.tar.gz
@@ -64,6 +68,7 @@ tar -xf voter-registration.tar.gz
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 ./jcli key generate --type ed25519extended > catalyst-vote.skey
 ./jcli key to-public < catalyst-vote.skey > catalyst-vote.pkey
 
@@ -73,8 +78,12 @@ ___
 BPの$HOME/CatalystVotingにある、  
 ・catalyst-vote.pkey  
 ・voter-registration  
-の2つを、エアギャップマシンの$NODE_HOMEにコピーします。
+の2つを、エアギャップマシンの$NODE_HOMEにコピーします。  
+  
+`BP → catalyst-vote.pkey/voter-registration → エアギャップ`
 
+　  
+　   
 BPにて最新スロットを取得し、戻りの数字をメモします。
 
 `BP`
@@ -83,8 +92,10 @@ currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
 echo Current Slot: $currentSlot
 
 ```
-
-エアギャップにて以下コマンドを入力し、登録メタデータを生成します。
+  
+  
+エアギャップにて以下コマンドを入力し、登録メタデータを生成します。  
+<スロット番号> の箇所を、先ほどメモした数字に置き換えてから入力してください。
 
 `エアギャップ`
 ```
@@ -97,11 +108,12 @@ cd $NODE_HOME
     --json > voting-registration-metadata.json
 
 ```
-> <スロット番号> の箇所を、先ほどメモした数字に置き換えてから入力してください。  
+
 
 　  
-エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。
-
+エアギャップの$NODE_HOMEに生成された"voting-registration-metadata.json"を、BPの$HOME/CatalystVotingに移動します。  
+  
+`エアギャップ → voting-registration-metadata.json → BP`
 ___
 ## 5、トランザクションを作成、送信します。
 
@@ -118,6 +130,7 @@ catalystpayment.addrの残高を算出します。
 
 `BP`
 ```
+cd $HOME/CatalystVoting
 cardano-cli query utxo \
     --address $(cat $HOME/CatalystVoting/catalystpayment.addr) \
     --mainnet > fullUtxo.out
@@ -236,14 +249,14 @@ tar -xf catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/
 
 ```
 
-QRコードを作成します。
+QRコードを作成します。 <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
 
 `BP`
 ```
 ./catalyst-toolbox qr-code encode --pin <4桁コード> --input catalyst-vote.skey --output catalyst-qrcode.png img
 
 ```
-> <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
+
 
  
 
@@ -257,3 +270,10 @@ _______
 >・voter-registration  
 >・voting-registration-metadata.json  
 >は削除してもらっても大丈夫です。
+  
+削除コマンド  
+`エアギャップ`
+```
+cd $NODE_HOME
+rm catalyst-vote.pkey voter-registration voting-registration-metadata.json
+```

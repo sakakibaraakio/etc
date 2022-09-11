@@ -3,50 +3,12 @@
 https://github.com/gitmachtl/scripts/blob/master/SPO_Pledge_Catalyst_Registration.md
 
 ___
-## 1、手数料支払い用のアドレスを生成します。
-
-`BP`
-```
-mkdir $HOME/CatalystVoting
-cd $HOME/CatalystVoting
-cardano-cli address key-gen \
-    --verification-key-file catalystpayment.vkey \
-    --signing-key-file catalystpayment.skey
-
-```
-
-___
-## 2、手数料支払い用アドレスに、1.5ADAを送金します。
-支払先アドレス表示コマンド
-
-`BP`
-```
-cd $HOME/CatalystVoting
-cardano-cli address build \
-    --payment-verification-key-file catalystpayment.vkey \
-    --out-file catalystpayment.addr \
-    --mainnet
-
-echo "$(cat catalystpayment.addr)"
-
-```
-
-残高確認コマンド
-
-`BP`
-```
-cd $HOME/CatalystVoting
-cardano-cli query utxo \
-    --address $(cat catalystpayment.addr) \
-    --mainnet
-
-```
-___
-## 3、jormungandrとVoter-toolを導入します。
+## 1、jormungandrとVoter-toolを導入します。
 jormungandrを導入します。
 
 `BP`
 ```
+mkdir $HOME/CatalystVoting
 cd $HOME/CatalystVoting
 wget https://github.com/input-output-hk/jormungandr/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name)/jormungandr-$(curl -s https://api.github.com/repos/input-output-hk/jormungandr/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu-generic.tar.gz
 
@@ -74,7 +36,7 @@ cd $HOME/CatalystVoting
 
 ```
 ___
-## 4、登録メタデータを生成します。
+## 2、登録メタデータを生成します。
 BPの$HOME/CatalystVotingにある、  
 ・catalyst-vote.pkey  
 ・voter-registration  
@@ -115,7 +77,7 @@ cd $NODE_HOME
   
 `エアギャップ → voting-registration-metadata.json → BP`
 ___
-## 5、トランザクションを作成、送信します。
+## 3、トランザクションを作成、送信します。
 
 最新スロット番号を取得します。
 
@@ -126,13 +88,13 @@ echo Current Slot: $currentSlot
 
 ```
 
-catalystpayment.addrの残高を算出します。
+payment.addrの残高を算出します。
 
 `BP`
 ```
-cd $HOME/CatalystVoting
+cd $NODE_HOME
 cardano-cli query utxo \
-    --address $(cat $HOME/CatalystVoting/catalystpayment.addr) \
+    --address $(cat $NODE_HOME/payment.addr) \
     --mainnet > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr | sed -e '/lovelace + [0-9]/d' > balance.out
@@ -168,10 +130,10 @@ build-raw transactionコマンドを実行します。
 ```
 cardano-cli transaction build-raw \
     ${tx_in} \
-    --tx-out $(cat catalystpayment.addr)+${total_balance} \
+    --tx-out $(cat $NODE_HOME/payment.addr)+${total_balance} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee 0 \
-    --metadata-json-file voting-registration-metadata.json \
+    --metadata-json-file $HOME//CatalystVoting/voting-registration-metadata.json \
     --out-file tx.tmp
 
 ```
@@ -207,37 +169,48 @@ echo txOut: ${txOut}
 ```
 cardano-cli transaction build-raw \
     ${tx_in} \
-    --tx-out $(cat catalystpayment.addr)+${txOut} \
+    --tx-out $(cat $NODE_HOME/payment.addr)+${txOut} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee ${fee} \
-    --metadata-json-file voting-registration-metadata.json \
+    --metadata-json-file $HOME//CatalystVoting/voting-registration-metadata.json \
     --out-file tx.raw
 
 ```
+　  
+>BPのtx.raw をエアギャップマシンのcnodeディレクトリにコピーします。  
+
+
+　  
 
 トランザクションに署名します。
 
-`BP`
+`エアギャップ`
 ```
+cd $NODE_HOME
 cardano-cli transaction sign \
     --tx-body-file tx.raw \
-    --signing-key-file catalystpayment.skey \
+    --signing-key-file payment.skey \
     --mainnet \
     --out-file tx.signed
 
 ```
+　  
+   
+>エアギャップマシンのtx.signed をBPのcnodeディレクトリにコピーします。  
 
+
+　  
 トランザクションを送信します。
 
 `BP`
 ```
 cardano-cli transaction submit \
-    --tx-file tx.signed \
+    --tx-file $NODE_HOME/tx.signed \
     --mainnet
 
 ```
 ___
-## 6、投票登録に使用するQRコードを作成します。
+## 4、投票登録に使用するQRコードを作成します。
 
 catalyst-toolboxを導入します。
 

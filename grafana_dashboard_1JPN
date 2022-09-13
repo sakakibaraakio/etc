@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 98,
+  "id": 102,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1265,7 +1265,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
-      "description": "生成後1秒以内に取得できたブロックの割合",
+      "description": "生成後1秒以内に取得したブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1336,7 +1336,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
-      "description": "生成後3秒以内に取得できたブロックの割合",
+      "description": "生成後3秒以内に取得したブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1407,7 +1407,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
-      "description": "生成後5秒以内に取得できたブロックの割合",
+      "description": "生成後5秒以内に取得したブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {

@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 93,
+  "id": 98,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -33,6 +33,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "現在のエポック",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -96,6 +97,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "ノード起動時間",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -164,6 +166,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "ブロックチェーン全体での、スロット毎のブロック生成率  \n理想値は5%  \nブロックチェーン全体でミスブロックが多いと数字が減少",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -239,7 +242,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
-      "description": "",
+      "description": "CPU使用率",
       "fieldConfig": {
         "defaults": {
           "unit": "percentunit"
@@ -333,7 +336,7 @@
         "uid": "n8qd9hn7z"
       },
       "decimals": 2,
-      "description": "",
+      "description": "カルダノノードのメモリ使用量",
       "fieldConfig": {
         "defaults": {
           "unit": "bytes"
@@ -433,7 +436,7 @@
         "uid": "n8qd9hn7z"
       },
       "decimals": 2,
-      "description": "",
+      "description": "システム全体のメモリ使用量",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -523,6 +526,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "現在のスロット",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -588,6 +592,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "スワップ領域メモリ使用量",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -676,6 +681,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "ブロックを生成できない状態にあったスロットの累計数",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -761,6 +767,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "システム時間と実際の時間の誤差",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -851,6 +858,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "ノードが起動してからブロックを生成した数",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -917,6 +925,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "接続先ノード数",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -982,6 +991,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "最新のブロックナンバー",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -1043,6 +1053,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "エポック残り日数  \n黄色ゾーンだと、次エポックのスケジュールが取得可能",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -1113,6 +1124,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "KESキー期限の残り日数",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -1179,6 +1191,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "メインストレージの使用率",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1252,6 +1265,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "生成後1秒以内に取得できたブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1322,6 +1336,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "生成後3秒以内に取得できたブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1392,6 +1407,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "生成後5秒以内に取得できたブロックの割合",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1462,6 +1478,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
+      "description": "KESキー整合性  \n62だと正常  \nそれ以外の数字の場合、KESキーを再作成する必要有り",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -1983,6 +2000,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node_1",
   "uid": "aaa",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }

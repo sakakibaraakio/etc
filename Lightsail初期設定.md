@@ -170,11 +170,11 @@ BP用サーバー
   
 　  
 ____
-### 7、ターミナルソフトからサーバーに接続します。
+### 8、ターミナルソフトからサーバーに接続します。
 ターミナルソフトの接続設定画面でSSHポート番号を変更してから接続してください。
 　  
 ___
-### 8、システムを更新します。
+### 9、システムを更新します。
 ※不正アクセスを予防するには、システムに最新のパッチを適用することが重要です。  
 ```
 sudo apt update -y && sudo apt upgrade -y
@@ -199,7 +199,7 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 >YESを選択しEnter
   
 ____
-### 9、システムで共有されるメモリを保護します。
+### 10、システムで共有されるメモリを保護します。
 /etc/fstabを開きます。  
 ```
 sudo nano /etc/fstab
@@ -210,7 +210,7 @@ tmpfs   /run/shm    tmpfs   ro,noexec,nosuid    0 0
 ```
 
 ____
-### 10、Swap領域を設定します。
+### 11、Swap領域を設定します。
 ```
 cd $HOME
 sudo fallocate -l 16G /swapfile
@@ -236,7 +236,7 @@ sudo reboot
 ```
 
 ____
-### 11、Fail2banをインストールします。
+### 12、Fail2banをインストールします。
 >Fail2banは、ログファイルを監視し、ログイン試行に失敗した特定のパターンを監視する侵入防止システムです。
 >特定のIPアドレスから（指定された時間内に）一定数のログイン失敗が検知された場合、
 >Fail2banはそのIPアドレスからのアクセスをブロックします。
@@ -269,7 +269,7 @@ sudo systemctl restart fail2ban
 　  
 
 _____
-### 12、Chronyを設定します。
+### 13、Chronyを設定します。
 ```
 sudo apt-get install chrony
 ```
@@ -327,7 +327,7 @@ sudo systemctl restart chronyd.service
 　  
 
 _____
-### 12、SSHの2段階認証を設定します。（任意）
+### 14、SSHの2段階認証を設定します。（任意）
 >こちらの導入は必須ではありません。  
 >導入する場合、事前にお手元のスマートフォンに「Google認証システムアプリ」のインストールが必要です
   

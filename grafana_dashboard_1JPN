@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 102,
+  "id": 113,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -71,7 +71,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -141,7 +141,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -213,7 +213,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -277,7 +277,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -371,7 +371,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -465,7 +465,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -564,7 +564,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -619,7 +619,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -708,7 +708,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -794,7 +794,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -900,7 +900,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -965,7 +965,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1029,7 +1029,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1098,7 +1098,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1172,7 +1172,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "expr": "(cardano_node_metrics_remainingKESPeriods_int * 1.5)",
@@ -1239,7 +1239,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1311,7 +1311,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1382,7 +1382,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1453,7 +1453,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1524,7 +1524,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.1",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
@@ -1543,433 +1543,6 @@
       ],
       "title": "KESperiod Check",
       "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "n8qd9hn7z"
-      },
-      "description": "",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 1,
-        "w": 1,
-        "x": 21,
-        "y": 23
-      },
-      "hiddenSeries": false,
-      "id": 96,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "cardano_node_metrics_mempoolBytes_int",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{alias}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Mempool bytes",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:69",
-          "format": "decbytes",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:70",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "n8qd9hn7z"
-      },
-      "decimals": 0,
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 1,
-        "w": 1,
-        "x": 22,
-        "y": 23
-      },
-      "hiddenSeries": false,
-      "id": 103,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "cardano_node_metrics_txsInMempool_int",
-          "interval": "",
-          "legendFormat": "{{alias}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Mempool transactions",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "none",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "n8qd9hn7z"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 1,
-        "w": 1,
-        "x": 23,
-        "y": 23
-      },
-      "id": 105,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.1",
-      "targets": [
-        {
-          "expr": "cardano_node_metrics_txsProcessedNum_int",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{alias}}",
-          "refId": "B"
-        }
-      ],
-      "title": "TXs processed",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "n8qd9hn7z"
-      },
-      "decimals": 2,
-      "description": "",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 1,
-        "w": 1,
-        "x": 21,
-        "y": 24
-      },
-      "hiddenSeries": false,
-      "id": 70,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.1.1",
-      "pointradius": 0.5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:1126",
-          "alias": "/.*transmit$/",
-          "transform": "negative-Y"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(node_network_receive_bytes_total[1m])*8",
-          "interval": "",
-          "legendFormat": "{{alias}} {{device}} receive",
-          "refId": "A"
-        },
-        {
-          "expr": "irate(node_network_transmit_bytes_total[1m])*8",
-          "interval": "",
-          "legendFormat": "{{alias}} {{device}} transmit",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Network usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1133",
-          "format": "bps",
-          "label": "transmit（-）/receive（+）",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1134",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "n8qd9hn7z"
-      },
-      "decimals": 2,
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 1,
-        "w": 1,
-        "x": 22,
-        "y": 24
-      },
-      "hiddenSeries": false,
-      "id": 129,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:488",
-          "alias": "/.*read$/",
-          "transform": "negative-Y"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(node_disk_read_bytes_total[1m])",
-          "interval": "",
-          "legendFormat": "{{alias}} {{device}} read",
-          "refId": "A"
-        },
-        {
-          "expr": "irate(node_disk_written_bytes_total[1m])",
-          "interval": "",
-          "legendFormat": "{{alias}} {{device}} write",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Disk usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:495",
-          "format": "Bps",
-          "label": "Bytes read (-) / write (+)",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:496",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
     }
   ],
   "refresh": "30s",
@@ -2000,6 +1573,6 @@
   "timezone": "",
   "title": "Monitor: cardano-node_1",
   "uid": "pJWmz6MVz",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }

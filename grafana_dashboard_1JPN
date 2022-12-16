@@ -767,7 +767,7 @@
         "type": "prometheus",
         "uid": "n8qd9hn7z"
       },
-      "description": "サーバー時間とブロックチェーン時間の誤差",
+      "description": "システム時間と実際の時間の誤差",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {

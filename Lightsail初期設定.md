@@ -229,8 +229,9 @@ sudo apt update -y && sudo apt upgrade -y
   
 ```
 sudo apt autoremove
+```  
+```
 sudo apt autoclean
-
 ```
 >質問にはyを入力してEnter
 

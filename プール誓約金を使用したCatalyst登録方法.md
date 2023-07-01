@@ -2,7 +2,7 @@
 参考先：
 https://github.com/gitmachtl/scripts/blob/master/SPO_Pledge_Catalyst_Registration.md
 
-***この方法はFund10以降では使用できません。Fund10での登録方法はこちら（検証不十分）***
+***このページの方法はFund10以降では使用できません。Fund10での登録方法はこちら（検証不十分）***
 https://github.com/sakakibaraakio/etc/blob/main/Fund10%E5%AF%BE%E5%BF%9C%E3%80%80%E3%83%97%E3%83%BC%E3%83%AB%E8%AA%93%E7%B4%84%E9%87%91%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9FCatalyst%E7%99%BB%E9%8C%B2%E6%96%B9%E6%B3%95.md
 *<details><summary>Fund9以前の方法</summary>*
 ___

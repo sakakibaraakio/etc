@@ -1,4 +1,5 @@
 # プール誓約金(payment.addr)を使用したCatalyst登録方法  
+  
 Fund10からはCatalyst登録の仕様が変わる為、Fund9以前に登録されていた方も再登録作業が必要です。  
 >Fund10より、Catalyst報酬はstake.addrではなくpayment.addrに入金されます。  
 
@@ -7,7 +8,7 @@ https://github.com/gitmachtl/scripts/blob/master/Catalyst_Registration_CLI_Tools
 
   
 *<details><summary>Catalyst Fund9以前にプール誓約を利用したCatalyst登録を実行していた方はこちら</summary>*
-以前の登録に使用したディレクトリをバックアップしておきます。
+以前の登録に使用したディレクトリをバックアップします。
 ```
 cd $HOME
 mv CatalystVoting CatalystVotingFund9

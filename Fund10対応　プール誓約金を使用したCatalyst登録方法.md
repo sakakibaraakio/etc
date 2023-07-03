@@ -186,7 +186,7 @@ cardano-cli transaction build-raw \
     --tx-out $(cat $NODE_HOME/payment.addr)+${txOut} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee ${fee} \
-    --metadata-json-file $HOME//CatalystVoting/vote-registration.json \
+    --metadata-json-file $HOME/CatalystVoting/vote-registration.json \
     --out-file tx.raw
 
 ```

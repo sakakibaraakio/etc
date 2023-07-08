@@ -7,7 +7,7 @@ Fund10からはCatalyst登録の仕様が変わる為、Fund9以前に登録さ�
 https://github.com/gitmachtl/scripts/blob/master/Catalyst_Registration_CLI_Tools.md
 
   
-*<details><summary>Catalyst Fund9以前にプール誓約を利用したCatalyst登録を実行していた方はこちら</summary>*
+*<details><summary>Catalyst Fund9以前に、プール誓約を利用したCatalyst登録を実行していた方はこちら</summary>*
 以前の登録に使用したディレクトリをバックアップします。
 ```
 cd $HOME

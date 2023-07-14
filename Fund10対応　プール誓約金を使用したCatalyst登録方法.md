@@ -70,7 +70,7 @@ BPの$HOME/CatalystVotingにある
 ___
 ## 2、登録メタデータを生成します。  
   
-DLしたファイルの内、 
+DLしたファイルの内、  
 ・myvotevoting.vkey  
 ・cardano-signer  
 の2つを、エアギャップマシンの$NODE_HOMEにコピーします。  

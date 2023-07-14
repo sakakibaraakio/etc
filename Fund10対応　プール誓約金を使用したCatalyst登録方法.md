@@ -94,7 +94,7 @@ cd $NODE_HOME
 　
 
 　  
-エアギャップの$NODE_HOMEに生成された"vote-registration.json"を、BPの$HOME/CatalystVotingに移動します。  
+エアギャップの$NODE_HOMEに生成された"vote-registration.json"を、BPの$HOME/CatalystVotingにコピーします。  
   
 `エアギャップ → vote-registration.json → BP`
 ___

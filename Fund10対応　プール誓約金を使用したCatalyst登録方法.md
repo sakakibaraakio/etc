@@ -43,7 +43,7 @@ tar -xf $(curl -s https://api.github.com/repos/input-output-hk/bech32/releases/l
 
 `BP`
 ```
-cardano-signer keygen \
+./cardano-signer keygen \
 	--cip36 \
 	--json-extended \
 	--out-skey myvotevoting.skey \

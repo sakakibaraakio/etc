@@ -58,6 +58,7 @@ BPの$HOME/CatalystVotingにある
 ・myvotevoting.json  
 ・cardano-signer  
 の4ファイルをDLしてください。  
+`BP → myvotevoting.vkey/myvotevoting.skey/myvotevoting.json/cardano-signer → エアギャップ`  
 
 >・myvotevoting.skey  
 >・myvotevoting.vkey  
@@ -74,7 +75,7 @@ DLしたファイルの内、
 ・myvotevoting.vkey  
 ・cardano-signer  
 の2つを、エアギャップマシンの$NODE_HOMEにコピーします。  
-`BP → myvotevoting.vkey/cardano-signer → エアギャップ`  
+
     
   
 エアギャップにて以下コマンドを入力し、登録ファイルを生成します。  

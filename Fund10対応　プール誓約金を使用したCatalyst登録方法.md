@@ -58,7 +58,7 @@ BPの$HOME/CatalystVotingにある
 ・myvotevoting.json  
 ・cardano-signer  
 の4ファイルをDLしてください。  
-`BP → myvotevoting.vkey/myvotevoting.skey/myvotevoting.json/cardano-signer → エアギャップ`  
+
 
 >・myvotevoting.skey  
 >・myvotevoting.vkey  

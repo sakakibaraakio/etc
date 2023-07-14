@@ -56,15 +56,21 @@ BPの$HOME/CatalystVotingにある
 ・myvotevoting.skey  
 ・myvotevoting.vkey  
 ・myvotevoting.json  
-の3ファイルをDLしバックアップを取っておきます。  
+・cardano-signer  
+の4ファイルをDLしてください。  
 
-myvotevoting.json には、  
-Fund11から開始予定のWeb版Catalyst投票センターを使用する際に必要な復元フレーズが含まれています。  
+>・myvotevoting.skey  
+>・myvotevoting.vkey  
+>・myvotevoting.json  
+>上記3ファイルはUSBに保存するなどバックアップを取っておいてください。  
+>
+>myvotevoting.json には、  
+>Fund11から開始予定のWeb版Catalyst投票センターを使用する際に必要な復元フレーズが含まれています。  
 
 ___
 ## 2、登録メタデータを生成します。  
   
-BPの$HOME/CatalystVotingにある、  
+DLしたファイルの内、 
 ・myvotevoting.vkey  
 ・cardano-signer  
 の2つを、エアギャップマシンの$NODE_HOMEにコピーします。  

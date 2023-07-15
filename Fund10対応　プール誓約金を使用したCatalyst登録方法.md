@@ -238,8 +238,10 @@ catalyst-toolboxを導入します。
 `BP`
 ```
 cd $HOME/CatalystVoting
-wget https://github.com/input-output-hk/catalyst-toolbox/releases/download/$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name)/catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu.tar.gz
-tar -xf catalyst-toolbox-$(curl -s https://api.github.com/repos/input-output-hk/catalyst-toolbox/releases/latest | jq -r .tag_name | tr -d v)-x86_64-unknown-linux-gnu.tar.gz
+git clone https://github.com/input-output-hk/catalyst-toolbox.git
+cd catalyst-toolbox
+cargo build 
+cd ../
 
 ```
 bech32のディレクトリを改名します。
@@ -260,7 +262,7 @@ QRコードを作成します。 <4桁コード> の部分を任意の4桁数字
 `BP`
 ```
 cd $HOME/CatalystVoting
-./catalyst-toolbox qr-code encode \
+$(find $HOME/CatalystVoting/catalyst-toolbox/target -type f -name "catalyst-toolbox") qr-code encode \
     --pin <4桁コード> \
     --input <(cat myvotevoting.skey | jq -r .cborHex | cut -c 5-132 | $(find $HOME/CatalystVoting/bech32 -type f -name "bech32") "ed25519e_sk") \
     --output myvote.qrcode.png \

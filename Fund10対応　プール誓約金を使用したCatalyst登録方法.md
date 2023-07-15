@@ -256,14 +256,20 @@ cd bech32
 cabal build bech32
 
 ```
-QRコードを作成します。 <4桁コード> の部分を任意の4桁数字に置き換えてから入力してください。
->4桁の数字は登録の際に使用するので、忘れないようにメモしておいてください。
+登録の際に使用するPINコードを設定します。 XXXXの部分を任意の4桁数字に置き換えてから入力してください。  
+>数字は忘れないようにメモしておいてください。  
 
+```
+pincode=XXXX
+echo "PINコードは${pincode}です"
+```
+
+QRコードを作成します。  
 `BP`
 ```
 cd $HOME/CatalystVoting
 $(find $HOME/CatalystVoting/catalyst-toolbox/target -type f -name "catalyst-toolbox") qr-code encode \
-    --pin <4桁コード> \
+    --pin $(echo ${pincode}) \
     --input <(cat myvotevoting.skey | jq -r .cborHex | cut -c 5-132 | $(find $HOME/CatalystVoting/bech32 -type f -name "bech32") "ed25519e_sk") \
     --output myvote.qrcode.png \
     img
@@ -273,7 +279,7 @@ $(find $HOME/CatalystVoting/catalyst-toolbox/target -type f -name "catalyst-tool
 
  
 
-$HOME/CatalystVoting の中に"catalyst-qrcode.png"というファイルが作成されるので、DLします。
+$HOME/CatalystVoting の中に"myvote.qrcode.png"というファイルが作成されるので、DLします。
   
 DLしたQRコードと設定した4桁pinコードを使用して、スマホアプリの"Catalyst Voting"にて登録を行えば完了です。  
 お疲れさまでした。

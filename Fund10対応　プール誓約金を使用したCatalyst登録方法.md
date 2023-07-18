@@ -240,6 +240,7 @@ catalyst-toolboxを導入します。
 cd $HOME/CatalystVoting
 git clone https://github.com/input-output-hk/catalyst-toolbox.git
 cd catalyst-toolbox
+git checkout 6c3ebb7
 cargo build 
 cd ../
 

@@ -87,8 +87,7 @@ cd $NODE_HOME
 	--payment-address $(cat payment.addr) \
 	--vote-public-key myvotevoting.vkey \
 	--secret-key stake.skey \
-	--json \
-	--out-file vote-registration.json
+	--out-cbor vote-registration.cbor
 
 ```
 　
@@ -154,7 +153,7 @@ cardano-cli transaction build-raw \
     --tx-out $(cat $NODE_HOME/payment.addr)+${total_balance} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee 0 \
-    --metadata-json-file $HOME/CatalystVoting/vote-registration.json \
+    --metadata-json-file $HOME/CatalystVoting/vote-registration.cbor \
     --out-file tx.tmp
 
 ```
@@ -193,7 +192,7 @@ cardano-cli transaction build-raw \
     --tx-out $(cat $NODE_HOME/payment.addr)+${txOut} \
     --invalid-hereafter $(( ${currentSlot} + 10000)) \
     --fee ${fee} \
-    --metadata-json-file $HOME/CatalystVoting/vote-registration.json \
+    --metadata-json-file $HOME/CatalystVoting/vote-registration.cbor \
     --out-file tx.raw
 
 ```

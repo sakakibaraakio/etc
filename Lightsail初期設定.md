@@ -223,9 +223,7 @@ ___
 ```
 sudo apt update -y && sudo apt upgrade -y
 ```
->ピンク色の画面が出てきたら、  
-` keep the local version currently installed`  
-のままエンターを選択します。
+>ピンク色の画面が出てきたら、そのままエンターを入力してください。
   
 ```
 sudo apt autoremove

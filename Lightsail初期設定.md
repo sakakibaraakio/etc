@@ -428,8 +428,9 @@ sudo nano /etc/ssh/sshd_config
 　  
 ChallengeResponseAuthenticationの項目を「yes」にします。  
 `ChallengeResponseAuthentication yes`  
-  
-  
+>Ubuntu22.04の方は`ChallengeResponseAuthentication`の代わりに`KbdInteractiveAuthentication`の項目を「yes」にしてください。  
+
+　  
 最後の行に1行追加します。  
 `AuthenticationMethods publickey,keyboard-interactive`  
 　  

@@ -66,6 +66,25 @@ ____
 SSH認証鍵は、サーバー構築時にダウンロードしたものを指定してください。
 　  
 　  
+*<details><summary>Ubuntu22.04の場合の特別設定</summary>*
+    ご利用のOSがUbuntu22.04の場合は、以下のコマンドを実行してください。
+  
+ブラケットペーストモードOFF
+```
+echo "set enable-bracketed-paste off" >> ~/.inputrc
+```
+
+デーモン再起動自動化
+```
+echo "\$nrconf{restart} = 'a';" | sudo tee /etc/needrestart/conf.d/50local.conf
+```
+```
+echo "\$nrconf{blacklist_rc} = [qr(^cardano-node\\.service$) => 0,];" | sudo tee -a /etc/needrestart/conf.d/50local.conf
+```
+
+</details>
+<br>
+
 _____
 ### 5、SSH鍵をed25519方式に変更します。
 ペア鍵の作成

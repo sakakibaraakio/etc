@@ -13,7 +13,7 @@ https://www.webdesignleaves.com/pr/plugins/mac_terminal_basics_01.html
 ____
 ### 2、LightsailのWEB管理画面の”インスタンスの作成”からサーバーを新規作成します。
 ”プラットフォーム”は「Linux/Unix」  
-”設計図の選択”は「OSのみ」からの「Ubuntu 20.04 LTS」  
+”設計図の選択”は「OSのみ」からの「Ubuntu 20.04 LTS」か「Ubuntu 22.04 LTS」  
 ”インスタンスプランの選択”は、カルダノサーバーの最小構成メモリを上回るプランを選択してください。  
 SSHキーペアをダウンロードします。（項目5 にてSSHキーを新しく作り直すのでデフォルトキーで大丈夫です。） 　　
 　  
